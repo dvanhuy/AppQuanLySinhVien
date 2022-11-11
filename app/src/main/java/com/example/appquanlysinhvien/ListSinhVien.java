@@ -26,6 +26,8 @@ public class ListSinhVien extends AppCompatActivity {
     ArrayList<SinhVien> listsv;
     ListViewAdapter listViewAdapter;
     String lopsinhvien;
+    int  vitriclick =-1;
+    SQLiteDatabase database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,29 +57,18 @@ public class ListSinhVien extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setResult(RESULT_OK);
                 finish();
             }
         });
 
         Intent datalopsv = getIntent();
         lopsinhvien = datalopsv.getStringExtra("class");
-        SQLiteDatabase database = openOrCreateDatabase("quanlysinhvien.db",MODE_PRIVATE,null);
-//        getdatatheolop
-        Cursor cursor = database.rawQuery("select * from sinhvien where lopsv='"+lopsinhvien+"'", null);
-        cursor.moveToFirst();
-        while(cursor.isAfterLast()==false)
-        {
-            SinhVien newsv = new SinhVien();
-            newsv.setMasv(cursor.getString(0));
-            newsv.setTensv(cursor.getString(1));
-            newsv.setLopsv(cursor.getString(2));
-            newsv.setdToan(cursor.getFloat(3));
-            newsv.setdTin(cursor.getFloat(4));
-            newsv.setdTiengAnh(cursor.getFloat(5));
-            listsv.add(newsv);
-            cursor.moveToNext();
-        }
-        cursor.close();
+        database = openOrCreateDatabase("quanlysinhvien.db",MODE_PRIVATE,null);
+
+        getDataTheoLop();
+
+
         listViewAdapter = new ListViewAdapter(this,R.layout.item_sinhvien,listsv);
         dssinhvien.setAdapter(listViewAdapter);
 
@@ -85,7 +76,10 @@ public class ListSinhVien extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(ListSinhVien.this,ChiTietSV.class);
-
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("svdcchon",listsv.get(i));
+                intent.putExtra("bundle",bundle);
+                getResultUpdate.launch(intent);
             }
         });
     }
@@ -110,4 +104,37 @@ public class ListSinhVien extends AppCompatActivity {
                 }
             }
     );
+    private ActivityResultLauncher<Intent> getResultUpdate =registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK){
+                        listsv = new ArrayList<>();
+                        getDataTheoLop();
+                        listViewAdapter.notifyDataSetChanged();
+                    }
+                    if (result.getResultCode() == Activity.RESULT_CANCELED){
+                    }
+                }
+            }
+    );
+
+    public void getDataTheoLop(){
+        Cursor cursor = database.rawQuery("select * from sinhvien where lopsv='"+lopsinhvien+"'", null);
+        cursor.moveToFirst();
+        while(cursor.isAfterLast()==false)
+        {
+            SinhVien newsv = new SinhVien();
+            newsv.setMasv(cursor.getString(0));
+            newsv.setTensv(cursor.getString(1));
+            newsv.setLopsv(cursor.getString(2));
+            newsv.setdToan(cursor.getFloat(3));
+            newsv.setdTin(cursor.getFloat(4));
+            newsv.setdTiengAnh(cursor.getFloat(5));
+            listsv.add(newsv);
+            cursor.moveToNext();
+        }
+        cursor.close();
+    }
 }

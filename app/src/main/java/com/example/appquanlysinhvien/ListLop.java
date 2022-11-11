@@ -25,6 +25,7 @@ public class ListLop extends AppCompatActivity {
     SQLiteDatabase database;
     ListView listclass;
     ArrayList<String> strings;
+    ArrayAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +44,7 @@ public class ListLop extends AppCompatActivity {
         }
         cursor.close();
         listclass= findViewById(R.id.listsinhvien);
-        ArrayAdapter adapter = new ArrayAdapter(
+        adapter = new ArrayAdapter(
                 ListLop.this,
                 android.R.layout.simple_list_item_1,
                 strings);
@@ -54,7 +55,7 @@ public class ListLop extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(ListLop.this,ListSinhVien.class);
                 intent.putExtra("class",strings.get(i));
-                startActivity(intent);
+                getResultClass.launch(intent);
             }
         });
 
@@ -109,5 +110,31 @@ public class ListLop extends AppCompatActivity {
             Toast.makeText(this, "Fail to insert record", Toast.LENGTH_SHORT).show();
         }
     }
+
+    private ActivityResultLauncher<Intent> getResultClass =registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK){
+
+                        Cursor cursor = database.rawQuery("select DISTINCT lopsv from sinhvien", null);
+                        cursor.moveToFirst();
+                        strings  = new ArrayList<>();
+                        while(cursor.isAfterLast()==false)
+                        {
+                            strings.add(cursor.getString(0));
+                            cursor.moveToNext();
+                        }
+                        cursor.close();
+                        adapter = new ArrayAdapter(
+                                ListLop.this,
+                                android.R.layout.simple_list_item_1,
+                                strings);
+                        listclass.setAdapter(adapter);
+                    }
+                }
+            }
+    );
 
 }

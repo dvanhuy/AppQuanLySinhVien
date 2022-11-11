@@ -22,9 +22,9 @@ public class AddSinhVien extends AppCompatActivity {
         setContentView(R.layout.activity_add_sinh_vien);
 
         back = findViewById(R.id.buttonback);
-        masv = findViewById(R.id.addmasv);
-        tensv = findViewById(R.id.addtensv);
-        lopsv = findViewById(R.id.addlopsv);
+        masv = findViewById(R.id.textmasv);
+        tensv = findViewById(R.id.texttensv);
+        lopsv = findViewById(R.id.textlopsv);
         diemtoan = findViewById(R.id.adddiemtoan);
         diemtin = findViewById(R.id.adddiemtin);
         diemta = findViewById(R.id.adddiemta);
@@ -37,13 +37,13 @@ public class AddSinhVien extends AppCompatActivity {
             }
         });
 
-        Button add = findViewById(R.id.buttonadd);
+        Button add = findViewById(R.id.updatebutton);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText tensv = findViewById(R.id.addtensv);
-                EditText masv = findViewById(R.id.addmasv);
-                EditText lopsv = findViewById(R.id.addlopsv);
+                EditText tensv = findViewById(R.id.texttensv);
+                EditText masv = findViewById(R.id.textmasv);
+                EditText lopsv = findViewById(R.id.textlopsv);
                 EditText diemtoan = findViewById(R.id.adddiemtoan);
                 EditText diemtin = findViewById(R.id.adddiemtin);
                 EditText diemta = findViewById(R.id.adddiemta);

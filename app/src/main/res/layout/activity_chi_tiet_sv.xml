@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/addmasv"
+        android:id="@+id/textmasv"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/addtensv"
+        android:id="@+id/texttensv"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -66,10 +66,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addmasv" />
+        app:layout_constraintTop_toBottomOf="@+id/textmasv" />
 
     <EditText
-        android:id="@+id/addlopsv"
+        android:id="@+id/textlopsv"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -84,7 +84,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addtensv" />
+        app:layout_constraintTop_toBottomOf="@+id/texttensv" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
@@ -94,7 +94,7 @@
         android:background="@drawable/updateborder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addlopsv">
+        app:layout_constraintTop_toBottomOf="@+id/textlopsv">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
@@ -148,7 +148,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/editTextNumber"
+                    android:id="@+id/texttoan"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginTop="45dp"
@@ -183,7 +183,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/editTextNumber8"
+                    android:id="@+id/texttin"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginTop="45dp"
@@ -206,7 +206,7 @@
                 android:layout_weight="1">
 
                 <EditText
-                    android:id="@+id/editTextNumber9"
+                    android:id="@+id/texttienganh"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginTop="45dp"
@@ -263,10 +263,11 @@
                 app:layout_constraintVertical_bias="0.515" />
 
             <EditText
-                android:id="@+id/editTextNumber2"
+                android:id="@+id/texttrungbinh"
                 android:layout_width="142dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:editable="false"
                 android:ems="10"
                 android:inputType="number"
                 android:text="9"
@@ -279,7 +280,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonadd"
+        android:id="@+id/updatebutton"
         android:layout_width="201dp"
         android:layout_height="69dp"
         android:layout_marginTop="24dp"
