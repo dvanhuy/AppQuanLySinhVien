@@ -14,6 +14,12 @@
         android:theme="@style/Theme.AppQuanLySinhVien"
         tools:targetApi="31">
         <activity
+            android:name=".AddSinhVien"
+            android:exported="false" />
+        <activity
+            android:name=".ChiTietSV"
+            android:exported="false" />
+        <activity
             android:name=".ListSinhVien"
             android:exported="false" />
         <activity

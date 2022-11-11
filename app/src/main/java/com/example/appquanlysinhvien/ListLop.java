@@ -37,7 +37,7 @@ public class ListLop extends AppCompatActivity {
             cursor.moveToNext();
         }
         cursor.close();
-        listclass= findViewById(R.id.listclass);
+        listclass= findViewById(R.id.listsinhvien);
         ArrayAdapter adapter = new ArrayAdapter(
                 ListLop.this,
                 android.R.layout.simple_list_item_1,
@@ -49,6 +49,7 @@ public class ListLop extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(ListLop.this,ListSinhVien.class);
                 intent.putExtra("class",strings.get(i));
+                startActivity(intent);
             }
         });
 

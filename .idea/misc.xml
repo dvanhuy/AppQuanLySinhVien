@@ -3,11 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/drawable-v24/main_bgitem.xml" value="0.1905" />
+        <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/drawable/add_buttonbg.xml" value="0.1905" />
         <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/drawable/borderbottom.xml" value="0.1675" />
+        <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1905" />
         <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/drawable/ic_update.xml" value="0.1905" />
+        <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/drawable/main_bgitem.xml" value="0.1905" />
+        <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/drawable/update_border_bottom.xml" value="0.1905" />
+        <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/drawable/update_bordertop.xml" value="0.1905" />
+        <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/drawable/updateborder.xml" value="0.1905" />
+        <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/layout/activity_add_sinh_vien.xml" value="0.25" />
+        <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/layout/activity_chi_tiet_sv.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/layout/activity_list_lop.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/layout/activity_list_sinh_vien.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/layout/item_sinhvien.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppQuanLySinhVien/app/src/main/res/layout/itemlop.xml" value="0.21458333333333332" />
       </map>
     </option>
