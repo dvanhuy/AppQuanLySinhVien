@@ -1,6 +1,8 @@
 package com.example.appquanlysinhvien;
 
-public class SinhVien {
+import java.io.Serializable;
+
+public class SinhVien implements Serializable {
     String masv,tensv,lopsv;
     float dToan,dTin,dTiengAnh;
 

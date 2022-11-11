@@ -1,7 +1,12 @@
 package com.example.appquanlysinhvien;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -105,21 +110,4 @@ public class ListLop extends AppCompatActivity {
         }
     }
 
-//    public void initdata(){
-//        SQLiteDatabase database = openOrCreateDatabase("quanlymaytinh.db", MODE_PRIVATE, null);
-//        Cursor cur=database.query("computer", null, null, null, null, null, null);
-//        cur.moveToFirst();
-//        arrayBook = new ArrayList();
-//        while(cur.isAfterLast()==false)
-//        {
-//            Book b=new Book();
-//            b.setTen(cur.getString(0));
-//            b.setCpu(cur.getString(1));
-//            b.setRam(cur.getString(2));
-//            b.setLoai(cur.getString(3));
-//            arrayBook.add(b);
-//            cur.moveToNext();
-//        }
-//        cur.close();
-//    }
 }
